@@ -11,7 +11,9 @@ distinguished_name = req_distinguished_name
 CN = ${CN}
 _EOF_
 
-openssl req -x509 -nodes -newkey rsa:2048 -days 3650 -config openssl.cnf -keyout stunnel.pem -out /etc/ssl/private/stunnel.pem
+openssl req -x509 -nodes -new -newkey rsa:2048 -days 3650 -config openssl.cnf -keyout stunnel.pem -out stunnel.pem
+mv stunnel.pem /etc/ssl/private/
+chmod 600 /etc/ssl/private/stunnel.pem
 rm openssl.cnf
 
 cd /etc/stunnel
