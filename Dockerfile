@@ -14,7 +14,7 @@ RUN apt-get update \
     stunnel4 \
     && rm -rf /var/lib/apt/lists/*
 VOLUME [ "/etc/stunnel" ]
-COPY --from=builder /etc/stunnel/stunnel.pem /etc/stunnel/stunnel.pem
+COPY --from=builder stunnel.pem /etc/stunnel/stunnel.pem
 COPY docker-entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 ENTRYPOINT [ "/usr/local/bin/docker-entrypoint.sh" ]
