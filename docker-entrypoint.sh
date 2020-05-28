@@ -32,3 +32,5 @@ pid = /var/run/stunnel4/stunnel.pid
 accept = ${ACCEPT}
 connect = ${CONNECT}
 _EOF_
+
+exec su - stunnel4 -c "$*"
