@@ -21,7 +21,7 @@ setuid = stunnel4
 setgid = stunnel4
 socket = l:TCP_NODELAY=1
 socket = r:TCP_NODELAY=1
-cert = /etc/ssl/private/stunnel.pem
+cert = /stunnel/stunnel.pem
 client = ${CLIENT:-no}
 pid = /var/run/stunnel4/stunnel.pid
 
@@ -30,4 +30,4 @@ accept = ${ACCEPT}
 connect = ${CONNECT}
 _EOF_
 
-exec stunnel "$@"
+exec stunnel "/stunnel/stunnel.conf"
