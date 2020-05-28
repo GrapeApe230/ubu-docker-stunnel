@@ -11,4 +11,4 @@ RUN chmod +x /stunnel/docker-entrypoint.sh \
 && chmod -R 755 /stunnel
 USER stunnel4
 ENTRYPOINT [ "/stunnel/docker-entrypoint.sh" ]
-#CMD [ "stunnel","/stunnel/stunnel.conf" ]
+CMD [ "stunnel","/stunnel/stunnel.conf" ]
