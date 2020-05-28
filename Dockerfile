@@ -9,6 +9,6 @@ VOLUME [ "/stunnel" ]
 #RUN chmod +x /stunnel/docker-entrypoint.sh \
 RUN chown -R stunnel4:stunnel4 stunnel \
 && chmod -R 755 stunnel
-USER stunnel4
+#USER stunnel4
 #ENTRYPOINT [ "docker-entrypoint.sh" ]
 #CMD [ "stunnel","/stunnel/stunnel.conf" ]
