@@ -6,8 +6,8 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 VOLUME [ "/stunnel" ]
 WORKDIR /stunnel
-COPY docker-entrypoint.sh /stunnel
-RUN chmod +x /stunnel/docker-entrypoint.sh \
+COPY --chown=stunnel4:stunnel4 docker-entrypoint.sh .
+RUN chmod +x docker-entrypoint.sh \
 && chown -R stunnel4 /stunnel \
 && chmod -R 755 /stunnel
 USER stunnel4
