@@ -1,4 +1,5 @@
 #!/bin/sh
+cd /stunnel
 
 touch openssl.cnf
 
