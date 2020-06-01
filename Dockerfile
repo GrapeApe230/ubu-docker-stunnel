@@ -6,9 +6,10 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 COPY --chown=stunnel4:stunnel4 docker-entrypoint.sh .
 RUN mkdir stunnel \
-&& chown stunnel4 stunnel \
-&& chmod +x docker-entrypoint.sh \
-&& mv docker-entrypoint.sh /stunnel
+    && chown stunnel4 stunnel \
+    && chmod +x docker-entrypoint.sh \
+    && mv docker-entrypoint.sh /stunnel \
+    && setcap 'cap_net_bind_service=+ep' stunnel
 WORKDIR /stunnel    
 VOLUME [ "/stunnel" ]
 USER stunnel4
