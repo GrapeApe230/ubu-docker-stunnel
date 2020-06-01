@@ -9,6 +9,6 @@ RUN mkdir stunnel \
 WORKDIR /stunnel    
 VOLUME [ "/stunnel" ]
 COPY --chown=stunnel4:stunnel4 docker-entrypoint.sh .
-RUN chmod +x docker-entrypoint.sh
 USER stunnel4
+RUN chmod +x docker-entrypoint.sh
 ENTRYPOINT [ "/stunnel/docker-entrypoint.sh" ]
