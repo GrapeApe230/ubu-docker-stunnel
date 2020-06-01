@@ -8,8 +8,8 @@ RUN apt-get update \
 WORKDIR /stunnel
 #COPY docker-entrypoint.sh /usr/local/bin/
 COPY docker-entrypoint.sh .
-RUN chown -R stunnel4 /stunnel \
-&& chmod -R 600  /stunnel \
-&& chmod +x /docker-entrypoint.sh
+RUN chown -R stunnel4 stunnel \
+&& chmod -R 600 stunnel \
+&& chmod +x /stunnel/docker-entrypoint.sh
 USER stunnel4
 ENTRYPOINT [ "/usr/local/bin/docker-entrypoint.sh" ]
