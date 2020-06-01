@@ -1,7 +1,5 @@
 #!/bin/sh
 
-cd /stunnel
-
 touch openssl.cnf
 
 cat >> openssl.cnf <<_EOF_
