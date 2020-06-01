@@ -11,4 +11,4 @@ VOLUME [ "/stunnel" ]
 COPY docker-entrypoint.sh .
 RUN chmod +x docker-entrypoint.sh
 USER stunnel4
-ENTRYPOINT [ "/usr/local/bin/docker-entrypoint.sh" ]
+ENTRYPOINT [ "/stunnel/docker-entrypoint.sh" ]
