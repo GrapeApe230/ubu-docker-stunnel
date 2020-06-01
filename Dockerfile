@@ -4,7 +4,7 @@ RUN apt-get update \
     openssl \
     stunnel4 \
     && rm -rf /var/lib/apt/lists/*
-COPY --chown=stunnel4:stunnel4 docker-entrypoint.sh /stunnel
+COPY --chown=stunnel4:stunnel4 docker-entrypoint.sh .
 RUN mkdir stunnel \
 && chown stunnel4 stunnel \
 && chmod +x docker-entrypoint.sh \
