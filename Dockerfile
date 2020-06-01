@@ -12,4 +12,4 @@ RUN mkdir stunnel \
 WORKDIR /stunnel    
 VOLUME [ "/stunnel" ]
 USER stunnel4
-ENTRYPOINT [ "\stunnel\docker-entrypoint.sh" ]
+ENTRYPOINT [ "/stunnel/docker-entrypoint.sh" ]
