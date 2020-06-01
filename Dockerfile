@@ -4,12 +4,11 @@ RUN apt-get update \
     openssl \
     stunnel4 \
     && rm -rf /var/lib/apt/lists/*
-#VOLUME [ "/etc/stunnel" ]
-WORKDIR /stunnel
-#COPY docker-entrypoint.sh /usr/local/bin/
+RUN mkdir stunnel \
+&& chown stunnel4 stunnel
+WORKDIR /stunnel    
+VOLUME [ "/stunnel" ]
 COPY docker-entrypoint.sh .
-RUN chown -R stunnel4 stunnel \
-&& chmod -R 600 stunnel \
-&& chmod +x /stunnel/docker-entrypoint.sh
+RUN chmod +x docker-entrypoint.sh
 USER stunnel4
 ENTRYPOINT [ "/usr/local/bin/docker-entrypoint.sh" ]
