@@ -11,7 +11,7 @@ RUN mkdir stunnel \
     && chmod +x docker-entrypoint.sh \
     && mv docker-entrypoint.sh /stunnel \
     && setcap 'cap_net_bind_service=+ep' /bin/stunnel4 \
-    && setcap 'cap_setgroup=+pe' /bin/stunnel4
+    && setcap 'cap_setgid=+pe' /bin/stunnel4
 WORKDIR /stunnel    
 VOLUME [ "/stunnel" ]
 USER stunnel4
